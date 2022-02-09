@@ -1,0 +1,92 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+
+        <div class="sidebar has-background-white">
+            <h1 class="title has-text-primary">
+                Lista de Tarefas
+            </h1>
+
+            <div class="list-menu">
+                <a class="list-menu-item" *ngFor="let list of lists" [routerLink]="['/lists', list._id]" routerLinkActive="is-active">
+                    <p>{{ list.title }}</p>
+                </a>
+
+            </div>
+
+            <button class="button is-primary has-text-white" routerLink="/new-list">+ Nova lista</button>
+
+        </div>
+
+        <div class="task-list-container has-background-light">
+
+            <!-- tasks -->
+            <div *ngIf="tasks">
+                <div class="top-bar">
+                    <h1 class="title has-text-primary">
+                        Tarefas
+                    </h1>
+                    <div class="dropdown is-hoverable is-right">
+                        <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                                <span class="icon is-small">
+                                    <i class="fas fa-cog" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content">
+                                <a [routerLink]="['/edit-list', selectedListId]" class="dropdown-item">
+                                    Editar
+                                </a>
+                                <a (click)="onDeleteListClick()" class="dropdown-item has-text-danger">
+                                    Deletar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="empty-state-text" *ngIf="tasks.length === 0">Ainda não tem nenhuma tarefa aqui!<br>Clique no botão de add para criar uma nova tarefa.</h3>
+
+                <!-- Task Elements -->
+                <div class="task-item-container">
+                    <div class="task" *ngFor="let task of tasks" [task]=task (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
+                        <span class="check-box">
+                            <i class="material-icons">
+                                check
+                            </i>
+                        </span>
+                        <div class="info-text-date">
+                            <div class="task-text">
+                                <p>{{ task.title }}</p>
+                            </div>
+                            <div class="task-date">
+                                <p>{{ task.date}}</p>
+                            </div>
+                        </div>
+                        <div class="task-buttons" (click)="$event.stopPropagation()">
+                            <div class="task-control-button" [appTooltip]="edit" [routerLink]="['/lists', selectedListId, 'edit-task', task._id]">
+                                <i class="material-icons edit-option">
+                                    edit
+                                </i>
+                            </div>
+                            <div class="task-control-button" [appTooltip]="delete" (click)="onDeleteTaskClick(task._id)" style="margin-left: 10px;">
+                                <i class="material-icons delete-option">
+                                    delete
+                                </i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <button routerLink="./new-task" class="circle-add-button button is-primary">
+                    <img src="../../../assets/plus-icon.svg" class="has-text-white">
+                </button>
+            </div>
+
+            <div *ngIf="!tasks">
+                <h3 class="empty-state-text">Por favor selecione a lista ao lado</h3>
+            </div>
+        </div>
+    </div>
+</div>

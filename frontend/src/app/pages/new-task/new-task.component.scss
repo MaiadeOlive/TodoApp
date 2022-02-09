@@ -1,0 +1,49 @@
+.heading-section {
+    background: linear-gradient(to right, #ff6e7f, #26a0da);
+    padding: 100px;
+    padding-bottom: 150px;
+}
+
+h1.title {
+    font-weight: bold;
+    color: #ff6e7f;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.add-todo-box {
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: -68px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(78, 67, 118, 0.4);
+}
+
+.add-todo-box-container {
+    top: 0;
+    position: sticky;
+    z-index: 1;
+}
+
+.alt-gradient-button {
+    background: linear-gradient(to right, rgb(224, 167, 61), #ff6e7f);
+    border: none;
+    font-weight: 600;
+    color: white;
+    opacity: 0.8;
+    &:hover {
+        opacity: 1;
+        color: white;
+        box-shadow: 0px 0px 0px 2px rgba(black, 0.05);
+    }
+    i.material-icons {
+        margin-right: 7px;
+        margin-left: -5px;
+    }
+}
+
+.input {
+    color: gray;
+}

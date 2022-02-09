@@ -1,0 +1,20 @@
+<div class="centered-content">
+    <div class="modal-box">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <h1 class="title">
+                Criar uma nova lista
+            </h1>
+
+            <input ngModel #listTitleInput="ngModel" class="input has-background-light is-medium" type="text" minlength="5" required name="title" placeholder="Adicione o nome da lista...">
+            <br><br>
+            <div class="buttons is-right">
+                <button class="button is-medium" routerLink="/">Cancelar</button>
+                <button class="button is-primary has-text-white is-medium">Criar</button>
+            </div>
+            <div *ngIf="listTitleInput.invalid && showValidationErrors" class="alert alert-danger">
+                <p class="help is-danger" *ngIf="listTitleInput.errors.required">Escreva o nome da lista!</p>
+                <p class="help is-danger" *ngIf="listTitleInput.errors.minlength">O nome da lista deve ter no minimo 5 caracteres!</p>
+            </div>
+        </form>
+    </div>
+</div>

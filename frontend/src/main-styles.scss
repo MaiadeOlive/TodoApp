@@ -1,0 +1,73 @@
+// This is where we put global styles and change variable values
+// Import Fonts (Lato and Nunito)
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+$pink: #ff6e7f;
+$blue: #26a0da;
+$dark-purple:#9b8ad8;
+$light-purple:#ddd4fd;
+$yellow: rgb(224,
+167,
+61);
+$light: #f8f8f8;
+// Update Bulma's global variables
+$family-sans-serif: "Nunito",
+sans-serif;
+$primary: $pink;
+$link: $blue;
+// Update some of Bulma's component variables
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+// Set custom global styles (will be applied to whole app)
+html {
+    background: linear-gradient(to right top, $pink, $blue);
+}
+
+html,
+body {
+    height: 100%;
+    scrollbar-width: thin;
+    /* "auto" or "thin" */
+    scrollbar-color: blue orange;
+    /* scroll thumb and track */
+}
+
+body::-webkit-scrollbar {
+    width: 5px
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-box {
+    min-height: 200px;
+    width: 100%;
+    max-width: 580px;
+    background: white;
+    border-radius: 5px;
+    padding: 35px;
+}
+
+.title {
+    font-family: 'Lato';
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.white-box {
+    padding: 35px;
+    background: white;
+    border-radius: 5px;
+    width: 350px;
+    max-width: 350px;
+}

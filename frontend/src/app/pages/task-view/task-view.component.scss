@@ -1,0 +1,206 @@
+@import '../../../main-styles.scss';
+::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(161, 254, 231);
+}
+
+.task-manager-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 680px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 250px;
+    background: white;
+    padding: 42px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.task-list-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 42px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    .top-bar {
+        margin-bottom: 20px;
+        display: flex;
+        .title {
+            flex-grow: 1;
+            margin: 0;
+        }
+    }
+}
+
+.task-item-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    min-height: 480px;
+    max-height: 480px;
+    .task {
+        width: 315px;
+        margin: 5px;
+        margin-left: 24px;
+    }
+}
+
+.list-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    .list-menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 5px;
+        width: 100%;
+        color: #5f5f5f;
+        margin-bottom: 5px;
+        &:hover {
+            background: $light-purple;
+            transition: background-color 1s;
+        }
+        &.is-active {
+            background-color: $dark-purple;
+            color: white;
+        }
+    }
+}
+
+.task {
+    display: flex;
+    background: #e3caed;
+    background: white;
+    height: 150px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    align-items: center;
+    &:not(.complete) {
+        cursor: pointer;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        &:active {
+            transform: scale(0.95);
+        }
+        &:hover {
+            box-shadow: 0 0 0 5px #eeeeee;
+            .task-buttons {
+                opacity: 1;
+                transform: scale(1);
+            }
+            .check-box {
+                i.material-icons {
+                    opacity: 1;
+                    align-items: center;
+                }
+                display: flex;
+                border: 2px solid #26da86;
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+                background-color: #26da86;
+                transition: background-color 1s;
+            }
+        }
+    }
+    &.completed {
+        .task {
+            opacity: 0.8;
+        }
+        .check-box {
+            i.material-icons {
+                opacity: 1;
+                align-items: center;
+                font-size: 15px;
+            }
+            display: flex;
+            border: 2px solid #26da86;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            background-color: #26da86;
+            transition: background-color 1s;
+        }
+    }
+    .task-text {
+        display: flex;
+        white-space: pre;
+        flex-grow: 1;
+        word-wrap: break-word;
+    }
+    .task-buttons {
+        display: flex;
+        transition: opacity 0.2s, transform 0.2s;
+        opacity: 0;
+        transform: scale(0.85);
+    }
+}
+
+.check-box {
+    i.material-icons {
+        opacity: 0;
+        align-items: center;
+        font-size: 16px;
+    }
+    display: flex;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    margin-bottom: 90px;
+    background-color: #ffffff;
+    transition: background-color 1s;
+}
+
+.circle-add-button {
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.empty-state-text {
+    font-size: 20px;
+    color: #777;
+    text-align: center;
+}
+
+.task-buttons .task-control-button {
+    display: flex;
+    i.material-icons {
+        font-size: 20px;
+    }
+}
+
+.edit-option {
+    &:hover {
+        color: #26a0da;
+        transition: background-color 1.5s;
+    }
+}
+
+.delete-option {
+    &:hover {
+        color: #ff6e7f;
+        transition: background-color 1.5s;
+    }
+}

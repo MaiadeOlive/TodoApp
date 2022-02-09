@@ -1,0 +1,27 @@
+<div class="centered-content">
+    <div class="modal-box">
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <h1 class="title">
+                Crie uma nova tarefa
+            </h1>
+
+            <input ngModel #taskTitleInput="ngModel" class="input has-background-light is-medium" required minlength="5" name="title" type="text" placeholder="Adicione o nome da tarefa...">
+            <br><br>
+
+            <input ngModel #taskDateInput="ngModel" class="input has-background-light is-medium" required name="date" type="date">
+            <br><br>
+            <div class="buttons is-right">
+                <button class="button is-medium" routerLink="/">Cancelar</button>
+                <button type="submit" class="button is-primary has-text-white is-medium">Criar</button>
+            </div>
+
+            <div *ngIf="taskTitleInput.invalid && showValidationErrors" class="alert alert-danger">
+                <p class="help is-danger" *ngIf="taskTitleInput.errors.required">Escreva uma tarefa!</p>
+                <p class="help is-danger" *ngIf="taskTitleInput.errors.minlength">A tarefa deve ter no minimo 5 caracteres!</p>
+            </div>
+            <div *ngIf="taskDateInput.invalid && showValidationErrors" class="alert alert-danger">
+                <p class="help is-danger" *ngIf="taskDateInput.errors.required">Adicione uma data para sua tarefa!</p>
+            </div>
+        </form>
+    </div>
+</div>
