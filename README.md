@@ -1,9 +1,11 @@
 # Todo App  
 
-Projeto desenvolvido para a disciplina 
-CIN7909-06342A (20212) - Prototipagem de Cenários Informacionais 
+Projeto desenvolvido para a disciplina CIN7909-06342A (20212) - Prototipagem de Cenários Informacionais 
+
 Universidade Federal de Santa Catarina
+
 Ministrada pelo professor Gustavo de Medeiros Araújo
+
 Seguindo as aulas e o tutorial do Devstackr 
 
 ### Stack: Typescript, AngularJs, NodeJS, MongoDb
@@ -21,11 +23,13 @@ Este projeto utiliza o [Angular CLI](https://github.com/angular/angular-cli) ver
 ## Development server
 
 No diretório `frontend` rode o comando `ng serve` no terminal para o servidor de desenvolvimento. 
+
 Abra o navegador com o endereço `http://localhost:4200/`. 
+
 A aplicação irá dar o reload automático caso mude algo nos arquivos.
 
 
-## Brackend 
+## Backend 
 
 Este projeto utiliza o [NodeJs](https://nodejs.org/en/) version 16.13.0
 
