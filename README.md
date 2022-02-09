@@ -36,4 +36,5 @@ Este projeto utiliza o [NodeJs](https://nodejs.org/en/) version 16.13.0
 ## Development server
 
 No diretório `api` rode o comando `node app.js` no terminal para o servidor de desenvolvimento. 
+
 O servidor será ouvido na porta 3000. 
