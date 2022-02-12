@@ -7,6 +7,10 @@ const TaskSchema = new mongoose.Schema({
         minlength: 1,
         trim: true
     },
+    date: {
+        type: Date,
+        required: true
+    },
     _listId: {
         type: mongoose.Types.ObjectId,
         required: true
