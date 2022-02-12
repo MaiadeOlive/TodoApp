@@ -19,7 +19,7 @@ export class NewTaskComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
-        this.listId = params['listId'];
+        this.listId = params.listId;
       }
     )
   }
