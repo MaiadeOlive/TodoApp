@@ -49,12 +49,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     overflow-y: auto;
-    min-height: 480px;
-    max-height: 480px;
     .task {
         width: 315px;
         margin: 5px;
-        margin-left: 24px;
     }
 }
 
@@ -100,9 +97,16 @@
         }
         &:hover {
             box-shadow: 0 0 0 5px #eeeeee;
+            .task-text {
+                width: 200px;
+                height: 100px;
+            }
             .task-buttons {
                 opacity: 1;
                 transform: scale(1);
+                align-items: baseline;
+                margin-top: 50px;
+                margin-left: -25px;
             }
             .check-box {
                 i.material-icons {
@@ -110,11 +114,12 @@
                     align-items: center;
                 }
                 display: flex;
-                border: 2px solid #26da86;
+                border: 2px solid #c8b9cc;
                 border-radius: 50%;
                 height: 20px;
                 width: 20px;
-                background-color: #26da86;
+                margin-left:60px;
+                background-color: #c8b9cc;
                 transition: background-color 1s;
             }
         }
@@ -123,32 +128,48 @@
         .task {
             opacity: 0.8;
         }
+        .task-text {
+            width: 200px;
+            height: 100px;
+        }
         .check-box {
             i.material-icons {
                 opacity: 1;
                 align-items: center;
                 font-size: 15px;
             }
-            display: flex;
             border: 2px solid #26da86;
             border-radius: 50%;
             height: 20px;
             width: 20px;
+            margin-left: 60px;
             background-color: #26da86;
             transition: background-color 1s;
         }
     }
     .task-text {
         display: flex;
-        white-space: pre;
         flex-grow: 1;
-        word-wrap: break-word;
+        white-space: normal;
+        width: 200px;
+        height: 100px;
+        z-index: 1;
+        text-overflow: ellipsis;
+        margin-top: 10px;
     }
     .task-buttons {
         display: flex;
-        transition: opacity 0.2s, transform 0.2s;
+        align-items: baseline;
+        transition: background-color 1s;
         opacity: 0;
         transform: scale(0.85);
+        margin-top: 50px;
+        margin-left: -25px;
+    }
+    .task-date {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 10px;
     }
 }
 
@@ -163,7 +184,7 @@
     border-radius: 50%;
     height: 20px;
     width: 20px;
-    margin-right: 10px;
+    margin-left: 60px;
     margin-bottom: 90px;
     background-color: #ffffff;
     transition: background-color 1s;
@@ -186,6 +207,9 @@
 
 .task-buttons .task-control-button {
     display: flex;
+    align-items: baseline;
+    margin-top: 50px;
+    margin-left: -25px;
     i.material-icons {
         font-size: 20px;
     }

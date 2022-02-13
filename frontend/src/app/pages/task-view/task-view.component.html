@@ -50,19 +50,20 @@
                 <!-- Task Elements -->
                 <div class="task-item-container">
                     <div class="task" *ngFor="let task of tasks" [task]=task (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
-                        <span class="check-box">
-                            <i class="material-icons">
-                                check
-                            </i>
-                        </span>
+
                         <div class="info-text-date">
                             <div class="task-text">
                                 <p>{{ task.title }}</p>
                             </div>
                             <div class="task-date">
-                                <p>{{ task.date}}</p>
+                                <p>{{ task.date | date }}</p>
                             </div>
                         </div>
+                        <span class="check-box">
+                            <i class="material-icons">
+                                check
+                            </i>
+                        </span>
                         <div class="task-buttons" (click)="$event.stopPropagation()">
                             <div class="task-control-button" [appTooltip]="edit" [routerLink]="['/lists', selectedListId, 'edit-task', task._id]">
                                 <i class="material-icons edit-option">
